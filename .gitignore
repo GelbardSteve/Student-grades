@@ -1,0 +1,12 @@
+# Environment files: never commit real values. Only *.example templates are tracked.
+.env
+.env.*
+!.env.example
+
+# Dependencies and build output
+node_modules/
+build/
+
+# OS / editor
+.DS_Store
+.vercel

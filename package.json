@@ -1,0 +1,18 @@
+{
+  "name": "react-students-grades",
+  "private": true,
+  "description": "Supabase tooling (database migrations, tests, Edge Functions) for the React app in reactApp/",
+  "scripts": {
+    "supabase": "supabase",
+    "db:start": "supabase start",
+    "db:stop": "supabase stop",
+    "db:reset": "supabase db reset",
+    "db:test": "supabase test db",
+    "functions:serve": "supabase functions serve --env-file supabase/functions/.env",
+    "test:api": "node --test tests/api.test.mjs"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.117.2",
+    "supabase": "2.119.0"
+  }
+}

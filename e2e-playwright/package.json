@@ -1,0 +1,39 @@
+{
+  "name": "e2e-playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:e2e": "npm run allure:clean && playwright test",
+    "test:report": "npm run test:e2e; code=$?; npm run allure:generate; exit $code",
+    "allure:report": "npm run allure:generate && npm run allure:open",
+    "allure:clean": "rm -rf allure-results",
+    "allure:keep-history": "mkdir -p allure-results && cp -R allure-report/history allure-results/ 2>/dev/null || true",
+    "allure:generate": "npm run allure:keep-history && allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "dockerImage": "docker build -t playwright-docker-demo ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.64.0",
+    "@supabase/supabase-js": "^2.117.2",
+    "@types/node": "^26.6.5",
+    "allure-commandline": "^2.46.1",
+    "allure-playwright": "^3.13.0",
+    "eslint": "^10.12.0",
+    "eslint-import-resolver-typescript": "^4.4.5",
+    "eslint-plugin-import-x": "^4.17.1",
+    "globals": "^17.13.0",
+    "jiti": "^2.7.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.23.15",
+    "typescript-eslint": "^8.71.2"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.7",
+    "zod": "^4.6.7"
+  }
+}
